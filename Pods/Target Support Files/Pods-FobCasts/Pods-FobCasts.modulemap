@@ -1,0 +1,6 @@
+framework module Pods_FobCasts {
+  umbrella header "Pods-FobCasts-umbrella.h"
+
+  export *
+  module * { export * }
+}

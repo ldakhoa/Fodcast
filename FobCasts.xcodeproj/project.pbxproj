@@ -7,14 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		023EE4E321A4FDE400FDFC5E /* PlayerDetalsView+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023EE4E221A4FDE400FDFC5E /* PlayerDetalsView+Gesture.swift */; };
+		023EE4E521A510FC00FDFC5E /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023EE4E421A510FC00FDFC5E /* UIApplication.swift */; };
 		026D809E219C4F53005898D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026D809D219C4F53005898D2 /* AppDelegate.swift */; };
 		026D80A0219C4F53005898D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026D809F219C4F53005898D2 /* ViewController.swift */; };
 		026D80A3219C4F53005898D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 026D80A1219C4F53005898D2 /* Main.storyboard */; };
 		026D80A5219C4F56005898D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 026D80A4219C4F56005898D2 /* Assets.xcassets */; };
 		026D80A8219C4F56005898D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 026D80A6219C4F56005898D2 /* LaunchScreen.storyboard */; };
+		026D80B0219C4FC5005898D2 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026D80AF219C4FC5005898D2 /* MainTabBarController.swift */; };
+		026D80B3219C68F4005898D2 /* FodcastsSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026D80B2219C68F4005898D2 /* FodcastsSearchTableViewController.swift */; };
+		026D80B6219C6988005898D2 /* Fodcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026D80B5219C6988005898D2 /* Fodcast.swift */; };
+		026D80B9219D3487005898D2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026D80B8219D3487005898D2 /* APIService.swift */; };
+		026D80BC219D672C005898D2 /* FodcastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 026D80BB219D672C005898D2 /* FodcastCell.xib */; };
+		026FB19321A8F4BC00F0FF01 /* FavoritesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026FB19221A8F4BC00F0FF01 /* FavoritesCollectionViewController.swift */; };
+		026FB19521A8F85900F0FF01 /* FavoriteFodcastCollectionviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026FB19421A8F85900F0FF01 /* FavoriteFodcastCollectionviewCell.swift */; };
+		0278F31421AA6B9A0011F9DB /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0278F31321AA6B9A0011F9DB /* UserDefaults.swift */; };
+		02CC269F219D694F00ABC5EC /* FodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CC269E219D694F00ABC5EC /* FodcastTableViewCell.swift */; };
+		02CC26A1219D9C6D00ABC5EC /* EpisodeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CC26A0219D9C6D00ABC5EC /* EpisodeTableViewController.swift */; };
+		02CC26A3219E764600ABC5EC /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CC26A2219E764600ABC5EC /* Episode.swift */; };
+		02CC26A6219E76EA00ABC5EC /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CC26A4219E76EA00ABC5EC /* EpisodeTableViewCell.swift */; };
+		02CC26A7219E76EA00ABC5EC /* EpisodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02CC26A5219E76EA00ABC5EC /* EpisodeTableViewCell.xib */; };
+		02CC26AA219E820E00ABC5EC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CC26A9219E820E00ABC5EC /* String.swift */; };
+		02CC26AC219E830500ABC5EC /* RSSFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CC26AB219E830500ABC5EC /* RSSFeed.swift */; };
+		02CC26AE219EA6E700ABC5EC /* PlayerDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02CC26AD219EA6E700ABC5EC /* PlayerDetailsView.xib */; };
+		02DF21AF21ABBFCE002763E0 /* DownloadsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF21AE21ABBFCE002763E0 /* DownloadsTableViewController.swift */; };
+		02EC0D82219EDD9E002E632D /* PlayerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC0D81219EDD9E002E632D /* PlayerDetailsView.swift */; };
+		02EC0D8521A10946002E632D /* CMTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC0D8421A10946002E632D /* CMTime.swift */; };
+		1BCFF2CBCAD0838328217547 /* Pods_FobCasts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B5349093F781E5CDCF67EE /* Pods_FobCasts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		023EE4E221A4FDE400FDFC5E /* PlayerDetalsView+Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerDetalsView+Gesture.swift"; sourceTree = "<group>"; };
+		023EE4E421A510FC00FDFC5E /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		026D809A219C4F53005898D2 /* FobCasts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FobCasts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		026D809D219C4F53005898D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		026D809F219C4F53005898D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +46,28 @@
 		026D80A4219C4F56005898D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		026D80A7219C4F56005898D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		026D80A9219C4F56005898D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		026D80AF219C4FC5005898D2 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		026D80B2219C68F4005898D2 /* FodcastsSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FodcastsSearchTableViewController.swift; sourceTree = "<group>"; };
+		026D80B5219C6988005898D2 /* Fodcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fodcast.swift; sourceTree = "<group>"; };
+		026D80B8219D3487005898D2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		026D80BB219D672C005898D2 /* FodcastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FodcastCell.xib; sourceTree = "<group>"; };
+		026FB19221A8F4BC00F0FF01 /* FavoritesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewController.swift; sourceTree = "<group>"; };
+		026FB19421A8F85900F0FF01 /* FavoriteFodcastCollectionviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteFodcastCollectionviewCell.swift; sourceTree = "<group>"; };
+		0278F31321AA6B9A0011F9DB /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		02CC269E219D694F00ABC5EC /* FodcastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FodcastTableViewCell.swift; sourceTree = "<group>"; };
+		02CC26A0219D9C6D00ABC5EC /* EpisodeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewController.swift; sourceTree = "<group>"; };
+		02CC26A2219E764600ABC5EC /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		02CC26A4219E76EA00ABC5EC /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
+		02CC26A5219E76EA00ABC5EC /* EpisodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeTableViewCell.xib; sourceTree = "<group>"; };
+		02CC26A9219E820E00ABC5EC /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		02CC26AB219E830500ABC5EC /* RSSFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeed.swift; sourceTree = "<group>"; };
+		02CC26AD219EA6E700ABC5EC /* PlayerDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerDetailsView.xib; sourceTree = "<group>"; };
+		02DF21AE21ABBFCE002763E0 /* DownloadsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsTableViewController.swift; sourceTree = "<group>"; };
+		02EC0D81219EDD9E002E632D /* PlayerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsView.swift; sourceTree = "<group>"; };
+		02EC0D8421A10946002E632D /* CMTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMTime.swift; sourceTree = "<group>"; };
+		37137F268863B219A3658F41 /* Pods-FobCasts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FobCasts.release.xcconfig"; path = "Pods/Target Support Files/Pods-FobCasts/Pods-FobCasts.release.xcconfig"; sourceTree = "<group>"; };
+		51117FE56DD93F54150D106E /* Pods-FobCasts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FobCasts.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FobCasts/Pods-FobCasts.debug.xcconfig"; sourceTree = "<group>"; };
+		75B5349093F781E5CDCF67EE /* Pods_FobCasts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FobCasts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BCFF2CBCAD0838328217547 /* Pods_FobCasts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +87,8 @@
 			children = (
 				026D809C219C4F53005898D2 /* FobCasts */,
 				026D809B219C4F53005898D2 /* Products */,
+				66C201CA4BA3F52DCE499EA2 /* Pods */,
+				06FF9FED8A94699AA44774E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +103,100 @@
 		026D809C219C4F53005898D2 /* FobCasts */ = {
 			isa = PBXGroup;
 			children = (
+				02CC26A8219E81FE00ABC5EC /* Extensions */,
+				026D80B7219D3473005898D2 /* API */,
+				026D80B4219C6972005898D2 /* Models */,
+				026D80BA219D66D9005898D2 /* Views */,
+				026D80B1219C68D4005898D2 /* Controllers */,
 				026D809D219C4F53005898D2 /* AppDelegate.swift */,
 				026D809F219C4F53005898D2 /* ViewController.swift */,
+				026D80AF219C4FC5005898D2 /* MainTabBarController.swift */,
 				026D80A1219C4F53005898D2 /* Main.storyboard */,
 				026D80A4219C4F56005898D2 /* Assets.xcassets */,
 				026D80A6219C4F56005898D2 /* LaunchScreen.storyboard */,
 				026D80A9219C4F56005898D2 /* Info.plist */,
 			);
 			path = FobCasts;
+			sourceTree = "<group>";
+		};
+		026D80B1219C68D4005898D2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				026D80B2219C68F4005898D2 /* FodcastsSearchTableViewController.swift */,
+				02CC26A0219D9C6D00ABC5EC /* EpisodeTableViewController.swift */,
+				026FB19221A8F4BC00F0FF01 /* FavoritesCollectionViewController.swift */,
+				02DF21AE21ABBFCE002763E0 /* DownloadsTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		026D80B4219C6972005898D2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				026D80B5219C6988005898D2 /* Fodcast.swift */,
+				02CC26A2219E764600ABC5EC /* Episode.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		026D80B7219D3473005898D2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				026D80B8219D3487005898D2 /* APIService.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		026D80BA219D66D9005898D2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				02EC0D83219EDE4A002E632D /* xibView */,
+				02CC269E219D694F00ABC5EC /* FodcastTableViewCell.swift */,
+				02CC26A4219E76EA00ABC5EC /* EpisodeTableViewCell.swift */,
+				02EC0D81219EDD9E002E632D /* PlayerDetailsView.swift */,
+				023EE4E221A4FDE400FDFC5E /* PlayerDetalsView+Gesture.swift */,
+				026FB19421A8F85900F0FF01 /* FavoriteFodcastCollectionviewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		02CC26A8219E81FE00ABC5EC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				02CC26A9219E820E00ABC5EC /* String.swift */,
+				02CC26AB219E830500ABC5EC /* RSSFeed.swift */,
+				02EC0D8421A10946002E632D /* CMTime.swift */,
+				023EE4E421A510FC00FDFC5E /* UIApplication.swift */,
+				0278F31321AA6B9A0011F9DB /* UserDefaults.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		02EC0D83219EDE4A002E632D /* xibView */ = {
+			isa = PBXGroup;
+			children = (
+				026D80BB219D672C005898D2 /* FodcastCell.xib */,
+				02CC26A5219E76EA00ABC5EC /* EpisodeTableViewCell.xib */,
+				02CC26AD219EA6E700ABC5EC /* PlayerDetailsView.xib */,
+			);
+			name = xibView;
+			sourceTree = "<group>";
+		};
+		06FF9FED8A94699AA44774E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75B5349093F781E5CDCF67EE /* Pods_FobCasts.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		66C201CA4BA3F52DCE499EA2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				51117FE56DD93F54150D106E /* Pods-FobCasts.debug.xcconfig */,
+				37137F268863B219A3658F41 /* Pods-FobCasts.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +206,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 026D80AC219C4F56005898D2 /* Build configuration list for PBXNativeTarget "FobCasts" */;
 			buildPhases = (
+				36865D7256127467A170F132 /* [CP] Check Pods Manifest.lock */,
 				026D8096219C4F53005898D2 /* Sources */,
 				026D8097219C4F53005898D2 /* Frameworks */,
 				026D8098219C4F53005898D2 /* Resources */,
+				A56B64D59BF8292687786CB3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -96,6 +233,11 @@
 				TargetAttributes = {
 					026D8099219C4F53005898D2 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -122,21 +264,85 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02CC26AE219EA6E700ABC5EC /* PlayerDetailsView.xib in Resources */,
+				026D80BC219D672C005898D2 /* FodcastCell.xib in Resources */,
 				026D80A8219C4F56005898D2 /* LaunchScreen.storyboard in Resources */,
 				026D80A5219C4F56005898D2 /* Assets.xcassets in Resources */,
+				02CC26A7219E76EA00ABC5EC /* EpisodeTableViewCell.xib in Resources */,
 				026D80A3219C4F53005898D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		36865D7256127467A170F132 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FobCasts-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A56B64D59BF8292687786CB3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FobCasts/Pods-FobCasts-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FeedKit/FeedKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FeedKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FobCasts/Pods-FobCasts-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		026D8096219C4F53005898D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				023EE4E521A510FC00FDFC5E /* UIApplication.swift in Sources */,
+				02CC26AC219E830500ABC5EC /* RSSFeed.swift in Sources */,
+				02EC0D82219EDD9E002E632D /* PlayerDetailsView.swift in Sources */,
 				026D80A0219C4F53005898D2 /* ViewController.swift in Sources */,
+				02CC26AA219E820E00ABC5EC /* String.swift in Sources */,
+				02EC0D8521A10946002E632D /* CMTime.swift in Sources */,
 				026D809E219C4F53005898D2 /* AppDelegate.swift in Sources */,
+				02CC269F219D694F00ABC5EC /* FodcastTableViewCell.swift in Sources */,
+				02CC26A6219E76EA00ABC5EC /* EpisodeTableViewCell.swift in Sources */,
+				026D80B3219C68F4005898D2 /* FodcastsSearchTableViewController.swift in Sources */,
+				026D80B0219C4FC5005898D2 /* MainTabBarController.swift in Sources */,
+				026FB19521A8F85900F0FF01 /* FavoriteFodcastCollectionviewCell.swift in Sources */,
+				023EE4E321A4FDE400FDFC5E /* PlayerDetalsView+Gesture.swift in Sources */,
+				0278F31421AA6B9A0011F9DB /* UserDefaults.swift in Sources */,
+				026FB19321A8F4BC00F0FF01 /* FavoritesCollectionViewController.swift in Sources */,
+				02DF21AF21ABBFCE002763E0 /* DownloadsTableViewController.swift in Sources */,
+				026D80B9219D3487005898D2 /* APIService.swift in Sources */,
+				02CC26A1219D9C6D00ABC5EC /* EpisodeTableViewController.swift in Sources */,
+				02CC26A3219E764600ABC5EC /* Episode.swift in Sources */,
+				026D80B6219C6988005898D2 /* Fodcast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +486,7 @@
 		};
 		026D80AD219C4F56005898D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51117FE56DD93F54150D106E /* Pods-FobCasts.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +505,7 @@
 		};
 		026D80AE219C4F56005898D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37137F268863B219A3658F41 /* Pods-FobCasts.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
