@@ -1,4 +1,4 @@
-//
+    //
 //  FavoritesCollectionViewController.swift
 //  FobCasts
 //
@@ -19,7 +19,6 @@ class FavoritesCollectionViewController: UICollectionViewController, UICollectio
         super.viewDidLoad()
         
         setupCollectionView()
-
         
     }
     
@@ -86,8 +85,7 @@ class FavoritesCollectionViewController: UICollectionViewController, UICollectio
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = (view.frame.width - 3 * 16) / 2
-        
-        
+                
         return CGSize(width: width, height: width + 46)
     }
     

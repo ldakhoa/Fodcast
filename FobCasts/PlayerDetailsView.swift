@@ -173,7 +173,7 @@ class PlayerDetailsView: UIView {
             return
         }
         
-        let currentEpisodeIndex = playlistEpisode.index { (ep) -> Bool in
+        let currentEpisodeIndex = playlistEpisode.firstIndex { (ep) -> Bool in
             return self.episode.title == ep.title && episode.author == ep.author
         }
         

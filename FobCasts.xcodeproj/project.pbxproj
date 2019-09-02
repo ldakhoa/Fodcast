@@ -103,12 +103,12 @@
 		026D809C219C4F53005898D2 /* FobCasts */ = {
 			isa = PBXGroup;
 			children = (
+				026D809D219C4F53005898D2 /* AppDelegate.swift */,
 				02CC26A8219E81FE00ABC5EC /* Extensions */,
 				026D80B7219D3473005898D2 /* API */,
 				026D80B4219C6972005898D2 /* Models */,
 				026D80BA219D66D9005898D2 /* Views */,
 				026D80B1219C68D4005898D2 /* Controllers */,
-				026D809D219C4F53005898D2 /* AppDelegate.swift */,
 				026D809F219C4F53005898D2 /* ViewController.swift */,
 				026D80AF219C4FC5005898D2 /* MainTabBarController.swift */,
 				026D80A1219C4F53005898D2 /* Main.storyboard */,
@@ -233,6 +233,7 @@
 				TargetAttributes = {
 					026D8099219C4F53005898D2 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1030;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -498,7 +499,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ledoananhkhoa.FobCasts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -517,7 +518,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ledoananhkhoa.FobCasts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

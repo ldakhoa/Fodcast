@@ -51,7 +51,7 @@ class EpisodeTableViewController: UITableViewController {
     fileprivate func setupNavigationBarButton() {
         // check if already saved this fodcast as favorite
         let savedFodcasts = UserDefaults.standard.savedFodcasts()
-        let hasFavorited = savedFodcasts.index(where: { $0.trackName == self.fodcast?.trackName && $0.artistName == self.fodcast?.artistName })
+        let hasFavorited = savedFodcasts.firstIndex(where: { $0.trackName == self.fodcast?.trackName && $0.artistName == self.fodcast?.artistName })
         if  hasFavorited != nil {
             // setting up our heart icon
             navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "heart"), style: .plain, target: nil, action: nil)

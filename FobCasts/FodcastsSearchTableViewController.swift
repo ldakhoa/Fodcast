@@ -16,17 +16,12 @@ class FodcastsSearchTableViewController: UITableViewController, UISearchBarDeleg
 
     // implement a UISearchController
     let searchController = UISearchController(searchResultsController: nil)
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupSearchBar()
         setupTableView()
-        
-        searchBar(searchController.searchBar, textDidChange: "Voong")
-        
-
 
     }
     

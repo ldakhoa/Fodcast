@@ -59,6 +59,7 @@ class MainTabBarController: UITabBarController {
     }
     
     // MARK: - Setup functions
+    
     let playerDetailsView = PlayerDetailsView.initFromNib()
     
     var maximizedTopAnchorConstraint: NSLayoutConstraint!
@@ -88,10 +89,9 @@ class MainTabBarController: UITabBarController {
     func setupViewControllers() {
         let layout = UICollectionViewFlowLayout()
         let favoritesController = FavoritesCollectionViewController(collectionViewLayout: layout)
-        viewControllers = [
-            // TODO: Change Favorite at first
+        viewControllers = [            
             generateNavigationController(with: FodcastsSearchTableViewController(), title: "Search", image: #imageLiteral(resourceName: "search")),
-            generateNavigationController(with: favoritesController, title: "Favorite", image: #imageLiteral(resourceName: "favorites")),            
+            generateNavigationController(with: favoritesController, title: "Favorite", image: #imageLiteral(resourceName: "favorites")),
             generateNavigationController(with: DownloadsTableViewController(), title: "Downloads", image: #imageLiteral(resourceName: "downloads")),
         ]
         

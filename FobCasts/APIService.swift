@@ -42,7 +42,7 @@ class APIService {
                 // update UserDefaults downloaded episodes with this temp file
                 var downloadedEpisodes = UserDefaults.standard.downloadedEpisodes()
                 
-                guard let index = downloadedEpisodes.index(where: { (e) -> Bool in
+                guard let index = downloadedEpisodes.firstIndex(where: { (e) -> Bool in
                     return e.title == episode.title && e.author == episode.author
                 }) else {
                     return

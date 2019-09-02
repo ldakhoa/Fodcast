@@ -29,7 +29,7 @@ class DownloadsTableViewController: UITableViewController {
     
     @objc fileprivate func handleDownloadComplete(notification: Notification) {
         guard let episodeDownloadComplete = notification.object as? APIService.EpisodeDownloadCompleteTuple else { return }
-        guard let index = self.episodes.index(where: { $0.title == episodeDownloadComplete.episodeTitle }) else { return }
+        guard let index = self.episodes.firstIndex(where: { $0.title == episodeDownloadComplete.episodeTitle }) else { return }
         
         self.episodes[index].fileUrl = episodeDownloadComplete.fileUrl
         
@@ -42,7 +42,7 @@ class DownloadsTableViewController: UITableViewController {
         guard let title = userInfo["title"] as? String else { return }
         
         // find the index using title
-        guard let index = self.episodes.index(where: { $0.title == title }) else { return }
+        guard let index = self.episodes.firstIndex(where: { $0.title == title } ) else { return }
         
         guard let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? EpisodeTableViewCell else { return }
         cell.progressLabel.text = "\(Int(progress * 100))%"
@@ -64,6 +64,7 @@ class DownloadsTableViewController: UITableViewController {
     }
     
     // MARK: - setup
+    
     fileprivate func setupTableView() {
         // use nib of episodeCell
         let nib = UINib(nibName: "EpisodeTableViewCell", bundle: nil)
@@ -71,6 +72,7 @@ class DownloadsTableViewController: UITableViewController {
     }
     
     // MARK: - tableView datasource
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return episodes.count
     }
