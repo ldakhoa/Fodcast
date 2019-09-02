@@ -81,7 +81,6 @@ class DownloadsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! EpisodeTableViewCell
         cell.episode = self.episodes[indexPath.row]
         
-        
         return cell
     }
     

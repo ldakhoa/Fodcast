@@ -103,14 +103,16 @@
 		026D809C219C4F53005898D2 /* FobCasts */ = {
 			isa = PBXGroup;
 			children = (
-				026D809D219C4F53005898D2 /* AppDelegate.swift */,
-				02CC26A8219E81FE00ABC5EC /* Extensions */,
-				026D80B7219D3473005898D2 /* API */,
 				026D80B4219C6972005898D2 /* Models */,
-				026D80BA219D66D9005898D2 /* Views */,
-				026D80B1219C68D4005898D2 /* Controllers */,
-				026D809F219C4F53005898D2 /* ViewController.swift */,
-				026D80AF219C4FC5005898D2 /* MainTabBarController.swift */,
+				026D80B7219D3473005898D2 /* API */,
+				64E59582231CC70D00B46E68 /* Systems */,
+				64E59585231CC7AE00B46E68 /* Downloads */,
+				64E59584231CC77C00B46E68 /* Player Details */,
+				64E59583231CC74500B46E68 /* Episodes */,
+				64E59581231CC65200B46E68 /* Search */,
+				64E59580231CC5E900B46E68 /* Favorites */,
+				02CC26A8219E81FE00ABC5EC /* Utility */,
+				026D80B1219C68D4005898D2 /* View Controllers */,
 				026D80A1219C4F53005898D2 /* Main.storyboard */,
 				026D80A4219C4F56005898D2 /* Assets.xcassets */,
 				026D80A6219C4F56005898D2 /* LaunchScreen.storyboard */,
@@ -119,15 +121,13 @@
 			path = FobCasts;
 			sourceTree = "<group>";
 		};
-		026D80B1219C68D4005898D2 /* Controllers */ = {
+		026D80B1219C68D4005898D2 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				026D80B2219C68F4005898D2 /* FodcastsSearchTableViewController.swift */,
-				02CC26A0219D9C6D00ABC5EC /* EpisodeTableViewController.swift */,
-				026FB19221A8F4BC00F0FF01 /* FavoritesCollectionViewController.swift */,
-				02DF21AE21ABBFCE002763E0 /* DownloadsTableViewController.swift */,
+				026D80AF219C4FC5005898D2 /* MainTabBarController.swift */,
+				026D809F219C4F53005898D2 /* ViewController.swift */,
 			);
-			name = Controllers;
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		026D80B4219C6972005898D2 /* Models */ = {
@@ -147,20 +147,7 @@
 			name = API;
 			sourceTree = "<group>";
 		};
-		026D80BA219D66D9005898D2 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				02EC0D83219EDE4A002E632D /* xibView */,
-				02CC269E219D694F00ABC5EC /* FodcastTableViewCell.swift */,
-				02CC26A4219E76EA00ABC5EC /* EpisodeTableViewCell.swift */,
-				02EC0D81219EDD9E002E632D /* PlayerDetailsView.swift */,
-				023EE4E221A4FDE400FDFC5E /* PlayerDetalsView+Gesture.swift */,
-				026FB19421A8F85900F0FF01 /* FavoriteFodcastCollectionviewCell.swift */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		02CC26A8219E81FE00ABC5EC /* Extensions */ = {
+		02CC26A8219E81FE00ABC5EC /* Utility */ = {
 			isa = PBXGroup;
 			children = (
 				02CC26A9219E820E00ABC5EC /* String.swift */,
@@ -169,17 +156,7 @@
 				023EE4E421A510FC00FDFC5E /* UIApplication.swift */,
 				0278F31321AA6B9A0011F9DB /* UserDefaults.swift */,
 			);
-			name = Extensions;
-			sourceTree = "<group>";
-		};
-		02EC0D83219EDE4A002E632D /* xibView */ = {
-			isa = PBXGroup;
-			children = (
-				026D80BB219D672C005898D2 /* FodcastCell.xib */,
-				02CC26A5219E76EA00ABC5EC /* EpisodeTableViewCell.xib */,
-				02CC26AD219EA6E700ABC5EC /* PlayerDetailsView.xib */,
-			);
-			name = xibView;
+			name = Utility;
 			sourceTree = "<group>";
 		};
 		06FF9FED8A94699AA44774E0 /* Frameworks */ = {
@@ -188,6 +165,61 @@
 				75B5349093F781E5CDCF67EE /* Pods_FobCasts.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		64E59580231CC5E900B46E68 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				026FB19421A8F85900F0FF01 /* FavoriteFodcastCollectionviewCell.swift */,
+				026FB19221A8F4BC00F0FF01 /* FavoritesCollectionViewController.swift */,
+			);
+			name = Favorites;
+			sourceTree = "<group>";
+		};
+		64E59581231CC65200B46E68 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				02CC269E219D694F00ABC5EC /* FodcastTableViewCell.swift */,
+				026D80B2219C68F4005898D2 /* FodcastsSearchTableViewController.swift */,
+				026D80BB219D672C005898D2 /* FodcastCell.xib */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		64E59582231CC70D00B46E68 /* Systems */ = {
+			isa = PBXGroup;
+			children = (
+				026D809D219C4F53005898D2 /* AppDelegate.swift */,
+			);
+			name = Systems;
+			sourceTree = "<group>";
+		};
+		64E59583231CC74500B46E68 /* Episodes */ = {
+			isa = PBXGroup;
+			children = (
+				02CC26A5219E76EA00ABC5EC /* EpisodeTableViewCell.xib */,
+				02CC26A4219E76EA00ABC5EC /* EpisodeTableViewCell.swift */,
+				02CC26A0219D9C6D00ABC5EC /* EpisodeTableViewController.swift */,
+			);
+			name = Episodes;
+			sourceTree = "<group>";
+		};
+		64E59584231CC77C00B46E68 /* Player Details */ = {
+			isa = PBXGroup;
+			children = (
+				02CC26AD219EA6E700ABC5EC /* PlayerDetailsView.xib */,
+				02EC0D81219EDD9E002E632D /* PlayerDetailsView.swift */,
+				023EE4E221A4FDE400FDFC5E /* PlayerDetalsView+Gesture.swift */,
+			);
+			name = "Player Details";
+			sourceTree = "<group>";
+		};
+		64E59585231CC7AE00B46E68 /* Downloads */ = {
+			isa = PBXGroup;
+			children = (
+				02DF21AE21ABBFCE002763E0 /* DownloadsTableViewController.swift */,
+			);
+			name = Downloads;
 			sourceTree = "<group>";
 		};
 		66C201CA4BA3F52DCE499EA2 /* Pods */ = {
