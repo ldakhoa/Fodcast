@@ -2,16 +2,29 @@
 
 My side project.
 
-# Features
+## Screenshots
+<p align="center">
+<img src="Screenshots/1.png" width="200">
+<img src="Screenshots/2.png" width="200">
+<img src="Screenshots/3.png" width="200">
+<img src="Screenshots/4.png" width="200">
+<img src="Screenshots/5.png" width="200">
+</p>
 
-1. Search podcast.
-2. Listen, adjust volume, forward or backward 15seconds each tap.
-3. Drag playing view to minimize or maximize.
-4. Play/Pause, adjust volume, adjust the time in the background.
-5. Choose podcast as your favorite
-6. Download episodes you loved.
+## Recording
+<img src="Screenshots/gifgifgif.gif">
 
-# Usage
+## Features
+
+- [x] Searching for podcasts using iTunes API.
+- [x] Listen, adjust volume, forward or backward 15seconds each tap.
+- [x] Drag playing view to minimize or maximize.
+- [x] Play/Pause, adjust volume, adjust the time in the background.
+- [x] Choose podcast as your favorite
+- [x] Download episodes you loved.
+- [ ] Dark mode.
+
+## Usage
 
 1. Download `git clone https://github.com/ldakhoa/Fodcast.git`
 2. Run `pod install`

@@ -11,7 +11,7 @@ import AVKit
 import MediaPlayer
 
 class PlayerDetailsView: UIView {
-
+    
     var episode: Episode! {
         didSet {
             playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
@@ -67,7 +67,7 @@ class PlayerDetailsView: UIView {
             let playerItem = AVPlayerItem(url: url)
             player.replaceCurrentItem(with: playerItem)
             player.play()
-
+            
         }
     }
     
@@ -89,7 +89,7 @@ class PlayerDetailsView: UIView {
             self?.currentTimeLabel.text = time.toDisplayString()
             let durationTime = self?.player.currentItem?.duration
             self?.durationLabel.text = durationTime?.toDisplayString()
-
+            
             self?.updateCurrentTimeSlider()
         }
     }
@@ -127,13 +127,15 @@ class PlayerDetailsView: UIView {
         let commandCenter = MPRemoteCommandCenter.shared()
         
         commandCenter.playCommand.isEnabled = true
-        commandCenter.playCommand.addTarget { (_) -> MPRemoteCommandHandlerStatus in
-            self.player.play()
-            self.playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
-            self.miniPlayPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
-            self.setupElapsedTime(playbackRate: 1)
-            return .success
-        }
+        //MPRemoteCommandHandlerStatusSuccess
+        commandCenter.playCommand.addTarget(self, action: #selector(handleCommandCenter))
+//        commandCenter.playCommand.addTarget { (_) -> MPRemoteCommandHandlerStatus in
+//            self.player.play()
+//            self.playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+//            self.miniPlayPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+//            self.setupElapsedTime(playbackRate: 1)
+//            return .success
+//        }
         
         
         commandCenter.pauseCommand.isEnabled = true
@@ -153,6 +155,15 @@ class PlayerDetailsView: UIView {
         
         commandCenter.nextTrackCommand.addTarget(self, action: #selector(handleNextTrack))
         commandCenter.previousTrackCommand.addTarget(self, action: #selector(handlePreviousTrack))
+    }
+    
+    @objc fileprivate func handleCommandCenter() -> MPRemoteCommandHandlerStatus {
+        self.player.play()
+        self.playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+        self.miniPlayPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+        self.setupElapsedTime(playbackRate: 1)
+        return .success
+//        return MPRemoteCommandHandlerStatusSuccess
     }
     
     var playlistEpisode = [Episode]()
@@ -214,7 +225,7 @@ class PlayerDetailsView: UIView {
         
         setupRemoteControl()
         setupInterruptionObserver()
-
+        
         setupGestures()
         observePlayerCurrentTime()
         
@@ -237,7 +248,7 @@ class PlayerDetailsView: UIView {
     }
     
     @objc fileprivate func handleInterruption(notification: Notification) {
-
+        
         guard let userInfo = notification.userInfo else { return }
         guard let type = userInfo[AVAudioSessionInterruptionTypeKey] as? UInt else { return }
         
@@ -254,7 +265,7 @@ class PlayerDetailsView: UIView {
                 playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
                 miniPlayPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
             }
-
+            
         }
         
     }
@@ -290,7 +301,7 @@ class PlayerDetailsView: UIView {
     
     @IBOutlet weak var miniPlayerView: UIView!
     @IBOutlet weak var maximizedStackView: UIStackView!
-
+    
     @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var currentTimeSlider: UISlider! {
@@ -320,7 +331,7 @@ class PlayerDetailsView: UIView {
     @IBAction func handleFastForward(_ sender: Any) {
         seekToCurrentTime(delta: 15)
     }
-
+    
     
     @IBAction func handleVolumeChange(_ sender: UISlider) {
         player.volume = sender.value
@@ -364,7 +375,7 @@ class PlayerDetailsView: UIView {
             self.setupElapsedTime(playbackRate: 0)
         }
     }
-
+    
     @IBAction func handleDismiss(_ sender: Any) {
         UIApplication.mainTabBarController()?.minimizePlayerDetails()
     }
