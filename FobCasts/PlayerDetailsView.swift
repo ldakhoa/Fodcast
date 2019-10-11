@@ -128,43 +128,53 @@ class PlayerDetailsView: UIView {
         
         commandCenter.playCommand.isEnabled = true
         //MPRemoteCommandHandlerStatusSuccess
-        commandCenter.playCommand.addTarget(self, action: #selector(handleCommandCenter))
-//        commandCenter.playCommand.addTarget { (_) -> MPRemoteCommandHandlerStatus in
-//            self.player.play()
-//            self.playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
-//            self.miniPlayPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
-//            self.setupElapsedTime(playbackRate: 1)
-//            return .success
-//        }
-        
+
+        commandCenter.playCommand.addTarget { (_) in
+            self.handlePlayCommand()
+            return MPRemoteCommandHandlerStatus.success
+        }
         
         commandCenter.pauseCommand.isEnabled = true
-        commandCenter.pauseCommand.addTarget { (_) -> MPRemoteCommandHandlerStatus in
-            self.player.pause()
-            self.playPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
-            self.miniPlayPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
-            self.setupElapsedTime(playbackRate: 0)
-            return .success
+        commandCenter.pauseCommand.addTarget { (_) in
+            self.handlePauseCommand()
+            return MPRemoteCommandHandlerStatus.success
         }
         
         commandCenter.togglePlayPauseCommand.isEnabled = true
-        commandCenter.togglePlayPauseCommand.addTarget { (_) -> MPRemoteCommandHandlerStatus in
+        commandCenter.togglePlayPauseCommand.addTarget { (_) in
             self.handlePlayPause()
-            return .success
+            return MPRemoteCommandHandlerStatus.success
         }
         
-        commandCenter.nextTrackCommand.addTarget(self, action: #selector(handleNextTrack))
-        commandCenter.previousTrackCommand.addTarget(self, action: #selector(handlePreviousTrack))
+        
+        commandCenter.nextTrackCommand.isEnabled = true
+        commandCenter.nextTrackCommand.addTarget { (_) in
+            self.handleNextTrack()
+            return MPRemoteCommandHandlerStatus.success
+        }
+        
+        commandCenter.previousTrackCommand.isEnabled = true
+        commandCenter.previousTrackCommand.addTarget { (_) in
+            self.handlePreviousTrack()
+            return MPRemoteCommandHandlerStatus.success
+        }
+
     }
     
-    @objc fileprivate func handleCommandCenter() -> MPRemoteCommandHandlerStatus {
+    @objc fileprivate func handlePlayCommand() {
         self.player.play()
         self.playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
         self.miniPlayPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
         self.setupElapsedTime(playbackRate: 1)
-        return .success
-//        return MPRemoteCommandHandlerStatusSuccess
     }
+    
+    @objc fileprivate func handlePauseCommand() {
+        self.player.pause()
+        self.playPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+        self.miniPlayPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+        self.setupElapsedTime(playbackRate: 0)
+    }
+    
     
     var playlistEpisode = [Episode]()
     
