@@ -12,7 +12,7 @@ My side project.
 </p>
 
 ## Recording
-<img src="Screenshots/gifgifgif.gif">
+<img src="Screenshots/gifgifgif.gif" width="300">
 
 ## Features
 
