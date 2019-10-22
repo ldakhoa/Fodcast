@@ -15,7 +15,6 @@ class APIService {
     typealias EpisodeDownloadCompleteTuple = (fileUrl: String, episodeTitle: String)
     let baseItunesSearchUrl = "https://itunes.apple.com/search"
     
-    // singleton
     static let shared = APIService()
     
     func downloadEpisode(episode: Episode) {
@@ -30,8 +29,6 @@ class APIService {
             // notify downloadsController abound download progress
             
             NotificationCenter.default.post(name: .downloadProgress, object: nil, userInfo: ["title": episode.title, "progress": progress.fractionCompleted])
-            
-            
             
             }.response { (response) in
                 

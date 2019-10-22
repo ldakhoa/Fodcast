@@ -14,6 +14,7 @@ class DownloadsTableViewController: UITableViewController {
     
     var episodes = UserDefaults.standard.downloadedEpisodes()
     
+    // MARK: - App LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,10 +23,29 @@ class DownloadsTableViewController: UITableViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        episodes = UserDefaults.standard.downloadedEpisodes()
+        tableView.reloadData()
+        UIApplication.mainTabBarController()?.viewControllers?[2].tabBarItem.badgeValue = nil
+        
+    }
+    
+    // MARK: - Setup Functions
+    
     fileprivate func setupObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleDownloadProgress), name: .downloadProgress, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleDownloadComplete), name: .downloadComplete, object: nil)
     }
+    
+    fileprivate func setupTableView() {
+        // use nib of episodeCell
+        let nib = UINib(nibName: "EpisodeTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: cellId)
+    }
+    
+    // MARK: - Handle Functions
     
     @objc fileprivate func handleDownloadComplete(notification: Notification) {
         guard let episodeDownloadComplete = notification.object as? APIService.EpisodeDownloadCompleteTuple else { return }
@@ -51,28 +71,13 @@ class DownloadsTableViewController: UITableViewController {
         if progress == 1 {
             cell.progressLabel.isHidden = true
         }
-        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        episodes = UserDefaults.standard.downloadedEpisodes()
-        tableView.reloadData()
-        UIApplication.mainTabBarController()?.viewControllers?[2].tabBarItem.badgeValue = nil
-        
-    }
-    
-    // MARK: - setup
-    
-    fileprivate func setupTableView() {
-        // use nib of episodeCell
-        let nib = UINib(nibName: "EpisodeTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: cellId)
-    }
-    
-    // MARK: - tableView datasource
-    
+}
+
+// MARK: - UITableViewController Datasource
+
+extension DownloadsTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return episodes.count
     }
@@ -83,6 +88,11 @@ class DownloadsTableViewController: UITableViewController {
         
         return cell
     }
+}
+
+// MARK: - UITableViewController Delegate
+
+extension DownloadsTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("launch episode player")
@@ -101,8 +111,6 @@ class DownloadsTableViewController: UITableViewController {
             alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             self.present(alertController, animated: true)
         }
-
-        
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -115,6 +123,4 @@ class DownloadsTableViewController: UITableViewController {
         tableView.deleteRows(at: [indexPath], with: .automatic)
         UserDefaults.standard.deleteEpisode(episode: episode)
     }
-    
-    
 }

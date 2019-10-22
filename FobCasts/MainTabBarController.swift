@@ -20,7 +20,6 @@ class MainTabBarController: UITabBarController {
         setupViewControllers()
         
         setupPlayerDetailsView()
-
     }
     
     @objc func minimizePlayerDetails() {

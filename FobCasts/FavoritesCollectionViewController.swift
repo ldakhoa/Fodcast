@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FavoritesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class FavoritesCollectionViewController: UICollectionViewController {
     
     fileprivate let favoriteCellId = "cellId"
     
@@ -62,19 +62,11 @@ class FavoritesCollectionViewController: UICollectionViewController, UICollectio
 
     }
 
-    
-    // MARK: - UICollectionView datasource
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return fodcasts.count
-    }
+}
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favoriteCellId, for: indexPath) as! FavoriteFodcastCollectionviewCell
-        cell.fodcast = self.fodcasts[indexPath.item]
-        
-        return cell
-    }
-    
+// MARK: - UICollectionViewController Delegate
+
+extension FavoritesCollectionViewController: UICollectionViewDelegateFlowLayout {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let episodesController = EpisodeTableViewController()
         episodesController.fodcast = self.fodcasts[indexPath.item]
@@ -85,7 +77,7 @@ class FavoritesCollectionViewController: UICollectionViewController, UICollectio
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = (view.frame.width - 3 * 16) / 2
-                
+        
         return CGSize(width: width, height: width + 46)
     }
     
@@ -97,7 +89,19 @@ class FavoritesCollectionViewController: UICollectionViewController, UICollectio
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 16
     }
+}
+
+// MARK: - UICollectionViewController Datasource
     
+extension FavoritesCollectionViewController {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return fodcasts.count
+    }
     
-    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favoriteCellId, for: indexPath) as! FavoriteFodcastCollectionviewCell
+        cell.fodcast = self.fodcasts[indexPath.item]
+        
+        return cell
+    }
 }

@@ -26,8 +26,6 @@ class FodcastTableViewCell: UITableViewCell {
             guard let url = URL(string: fodcast.artworkUrl600 ?? "") else { return }
 
             fodcastImageView.sd_setImage(with: url, completed: nil)
-            
-            
         }
     }
     

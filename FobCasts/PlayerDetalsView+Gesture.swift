@@ -60,8 +60,6 @@ extension PlayerDetailsView {
                 if translation.y > 50 {
                     UIApplication.mainTabBarController()?.minimizePlayerDetails()
                 }
-                
-                
             }, completion: nil)
         }
     }

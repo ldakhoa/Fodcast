@@ -10,11 +10,12 @@ import UIKit
 
 class FodcastsSearchTableViewController: UITableViewController, UISearchBarDelegate {
     
+    // MARK: - Properties
+    
     fileprivate let cellId = "cellId"
     
     var fodcasts = [Fodcast]()
 
-    // implement a UISearchController
     let searchController = UISearchController(searchResultsController: nil)
         
     override func viewDidLoad() {
@@ -40,7 +41,6 @@ class FodcastsSearchTableViewController: UITableViewController, UISearchBarDeleg
     
     fileprivate func setupTableView() {
         tableView.tableFooterView = UIView()
-        
         let nib = UINib(nibName: "FodcastCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: cellId)
     }
@@ -61,8 +61,11 @@ class FodcastsSearchTableViewController: UITableViewController, UISearchBarDeleg
 
     }
 
-    // MARK: - UITableView datasource
+}
 
+// MARK: - UITableViewController Datasource
+
+extension FodcastsSearchTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fodcasts.count
     }
@@ -72,9 +75,15 @@ class FodcastsSearchTableViewController: UITableViewController, UISearchBarDeleg
         
         let fodcast = self.fodcasts[indexPath.row]
         cell.fodcast = fodcast
-
+        
         return cell
     }
+
+}
+
+// MARK: - UITableViewController Delegate
+
+extension FodcastsSearchTableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
@@ -100,10 +109,5 @@ class FodcastsSearchTableViewController: UITableViewController, UISearchBarDeleg
         
         episodeController.fodcast = fodcast
         navigationController?.pushViewController(episodeController, animated: true)
-
     }
-    
-    
-    
 }
-

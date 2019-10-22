@@ -127,7 +127,6 @@ class PlayerDetailsView: UIView {
         let commandCenter = MPRemoteCommandCenter.shared()
         
         commandCenter.playCommand.isEnabled = true
-        //MPRemoteCommandHandlerStatusSuccess
 
         commandCenter.playCommand.addTarget { (_) in
             self.handlePlayCommand()
@@ -146,7 +145,6 @@ class PlayerDetailsView: UIView {
             return MPRemoteCommandHandlerStatus.success
         }
         
-        
         commandCenter.nextTrackCommand.isEnabled = true
         commandCenter.nextTrackCommand.addTarget { (_) in
             self.handleNextTrack()
@@ -158,7 +156,6 @@ class PlayerDetailsView: UIView {
             self.handlePreviousTrack()
             return MPRemoteCommandHandlerStatus.success
         }
-
     }
     
     @objc fileprivate func handlePlayCommand() {
@@ -280,7 +277,8 @@ class PlayerDetailsView: UIView {
         
     }
     
-    // MARK: -
+    // MARK: - IBActions and IBOutlets Connect
+
     static func initFromNib() -> PlayerDetailsView {
         return Bundle.main.loadNibNamed("PlayerDetailsView", owner: self, options: nil)?.first as! PlayerDetailsView
     }
@@ -289,9 +287,7 @@ class PlayerDetailsView: UIView {
         print("PlayerDetail memory being reclaimed")
         NotificationCenter.default.removeObserver(self, name: AVAudioSession.interruptionNotification, object: nil)
     }
-    
-    // MARK: - IB Actions and outlets
-    
+
     @IBOutlet weak var miniEpisodeImageView: UIImageView!
     @IBOutlet weak var miniTitleLabel: UILabel!
     
@@ -390,7 +386,8 @@ class PlayerDetailsView: UIView {
         UIApplication.mainTabBarController()?.minimizePlayerDetails()
     }
     
-    //MARK: - refactor function
+    //MARK: - Refactor function
+    
     fileprivate func enlargeEpisodeImageView() {
         UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.episodeImageView.transform = .identity
@@ -409,7 +406,5 @@ class PlayerDetailsView: UIView {
         let seekTime = CMTimeAdd(player.currentTime(), fifteenSeconds)
         player.seek(to: seekTime)
     }
-    
-    
     
 }

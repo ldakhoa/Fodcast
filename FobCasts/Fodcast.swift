@@ -26,7 +26,6 @@ class Fodcast: NSObject ,Decodable, NSCoding {
         self.feedUrl = aDecoder.decodeObject(forKey: "feedKey") as? String
     }
     
-    
     var trackName: String?
     var artistName: String?
     var artworkUrl600: String?

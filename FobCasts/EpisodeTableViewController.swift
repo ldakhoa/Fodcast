@@ -35,6 +35,8 @@ class EpisodeTableViewController: UITableViewController {
 
     var episodes = [Episode]()
 
+    // MARK: - App LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
          
@@ -60,7 +62,6 @@ class EpisodeTableViewController: UITableViewController {
             
         }
         
-
     }
 
     @objc fileprivate func handleSaveFavorite() {
@@ -104,7 +105,28 @@ class EpisodeTableViewController: UITableViewController {
         tableView.tableFooterView = UIView()
     }
     
-    // MARK: - UITableView datasource
+}
+
+// MARK: - UITableViewController Datasource
+
+extension EpisodeTableViewController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return episodes.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! EpisodeTableViewCell
+        let episode = episodes[indexPath.row]
+        cell.episode = episode
+        
+        return cell
+    }
+
+}
+
+// MARK: - UITableViewController Delegate
+
+extension EpisodeTableViewController {
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let activityIndicatorView = UIActivityIndicatorView(style: .whiteLarge)
@@ -120,7 +142,7 @@ class EpisodeTableViewController: UITableViewController {
         activityLabel.textColor = .purple
         
         view.addSubview(activityIndicatorView)
-                
+        
         activityIndicatorView.centerXAnchor.constraint(equalTo: tableView.centerXAnchor).isActive = true
         activityIndicatorView.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 16).isActive = true
         
@@ -130,24 +152,12 @@ class EpisodeTableViewController: UITableViewController {
         activityLabel.centerXAnchor.constraint(equalTo: activityIndicatorView.centerXAnchor).isActive = true
         activityLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
         activityLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-
+        
         return activityIndicatorView
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return episodes.isEmpty ? 200 : 0
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return episodes.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! EpisodeTableViewCell
-        let episode = episodes[indexPath.row]
-        cell.episode = episode
-        
-        return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -159,22 +169,16 @@ class EpisodeTableViewController: UITableViewController {
         UIApplication.mainTabBarController()?.maximizePlayerDetails(episode: episode, playlistEpisode: self.episodes)
     }
     
-    // swipe action
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
         let downloadAction = UITableViewRowAction(style: .normal, title: "Download") { (_, _) in
-            
             print("downloadin episode into UserDefaults")
             let episode = self.episodes[indexPath.row]
             UserDefaults.standard.downloadEpisode(episode: episode)
             self.showDownloadsBadgeHighLight()
             APIService.shared.downloadEpisode(episode: episode)
-            
-            
         }
         
         return [downloadAction]
-        
     }
     
     fileprivate func showDownloadsBadgeHighLight() {
@@ -182,3 +186,4 @@ class EpisodeTableViewController: UITableViewController {
     }
     
 }
+

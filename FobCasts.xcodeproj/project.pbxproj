@@ -10,7 +10,6 @@
 		023EE4E321A4FDE400FDFC5E /* PlayerDetalsView+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023EE4E221A4FDE400FDFC5E /* PlayerDetalsView+Gesture.swift */; };
 		023EE4E521A510FC00FDFC5E /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023EE4E421A510FC00FDFC5E /* UIApplication.swift */; };
 		026D809E219C4F53005898D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026D809D219C4F53005898D2 /* AppDelegate.swift */; };
-		026D80A0219C4F53005898D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026D809F219C4F53005898D2 /* ViewController.swift */; };
 		026D80A5219C4F56005898D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 026D80A4219C4F56005898D2 /* Assets.xcassets */; };
 		026D80A8219C4F56005898D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 026D80A6219C4F56005898D2 /* LaunchScreen.storyboard */; };
 		026D80B0219C4FC5005898D2 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026D80AF219C4FC5005898D2 /* MainTabBarController.swift */; };
@@ -40,7 +39,6 @@
 		023EE4E421A510FC00FDFC5E /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		026D809A219C4F53005898D2 /* FobCasts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FobCasts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		026D809D219C4F53005898D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		026D809F219C4F53005898D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		026D80A4219C4F56005898D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		026D80A7219C4F56005898D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		026D80A9219C4F56005898D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,33 +99,66 @@
 		026D809C219C4F53005898D2 /* FobCasts */ = {
 			isa = PBXGroup;
 			children = (
-				026D80B4219C6972005898D2 /* Models */,
-				026D80B7219D3473005898D2 /* API */,
-				64E59582231CC70D00B46E68 /* Systems */,
-				64E59585231CC7AE00B46E68 /* Downloads */,
-				64E59584231CC77C00B46E68 /* Player Details */,
-				64E59583231CC74500B46E68 /* Episodes */,
+				64CB572D235F526C00D0F333 /* API */,
+				64CB572B235F526700D0F333 /* AppDelegate */,
+				64CB572A235F526500D0F333 /* Downloads */,
+				64CB5728235F526200D0F333 /* Episodes */,
+				64CB572E235F52A800D0F333 /* Favorites */,
+				64CB572C235F526A00D0F333 /* Models */,
+				64CB5729235F526300D0F333 /* Player Details */,
+				64CB5734235F53C100D0F333 /* Resources */,
 				64E59581231CC65200B46E68 /* Search */,
-				64E59580231CC5E900B46E68 /* Favorites */,
-				02CC26A8219E81FE00ABC5EC /* Utility */,
-				026D80B1219C68D4005898D2 /* View Controllers */,
-				026D80A4219C4F56005898D2 /* Assets.xcassets */,
-				026D80A6219C4F56005898D2 /* LaunchScreen.storyboard */,
-				026D80A9219C4F56005898D2 /* Info.plist */,
+				64CB5730235F52B600D0F333 /* Utility */,
+				64CB572F235F52B000D0F333 /* View Controllers */,
 			);
 			path = FobCasts;
 			sourceTree = "<group>";
 		};
-		026D80B1219C68D4005898D2 /* View Controllers */ = {
+		06FF9FED8A94699AA44774E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				026D80AF219C4FC5005898D2 /* MainTabBarController.swift */,
-				026D809F219C4F53005898D2 /* ViewController.swift */,
+				75B5349093F781E5CDCF67EE /* Pods_FobCasts.framework */,
 			);
-			name = "View Controllers";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		026D80B4219C6972005898D2 /* Models */ = {
+		64CB5728235F526200D0F333 /* Episodes */ = {
+			isa = PBXGroup;
+			children = (
+				02CC26A5219E76EA00ABC5EC /* EpisodeTableViewCell.xib */,
+				02CC26A4219E76EA00ABC5EC /* EpisodeTableViewCell.swift */,
+				02CC26A0219D9C6D00ABC5EC /* EpisodeTableViewController.swift */,
+			);
+			name = Episodes;
+			sourceTree = "<group>";
+		};
+		64CB5729235F526300D0F333 /* Player Details */ = {
+			isa = PBXGroup;
+			children = (
+				02CC26AD219EA6E700ABC5EC /* PlayerDetailsView.xib */,
+				02EC0D81219EDD9E002E632D /* PlayerDetailsView.swift */,
+				023EE4E221A4FDE400FDFC5E /* PlayerDetalsView+Gesture.swift */,
+			);
+			name = "Player Details";
+			sourceTree = "<group>";
+		};
+		64CB572A235F526500D0F333 /* Downloads */ = {
+			isa = PBXGroup;
+			children = (
+				02DF21AE21ABBFCE002763E0 /* DownloadsTableViewController.swift */,
+			);
+			name = Downloads;
+			sourceTree = "<group>";
+		};
+		64CB572B235F526700D0F333 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				026D809D219C4F53005898D2 /* AppDelegate.swift */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		64CB572C235F526A00D0F333 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				026D80B5219C6988005898D2 /* Fodcast.swift */,
@@ -136,7 +167,7 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		026D80B7219D3473005898D2 /* API */ = {
+		64CB572D235F526C00D0F333 /* API */ = {
 			isa = PBXGroup;
 			children = (
 				026D80B8219D3487005898D2 /* APIService.swift */,
@@ -144,7 +175,24 @@
 			name = API;
 			sourceTree = "<group>";
 		};
-		02CC26A8219E81FE00ABC5EC /* Utility */ = {
+		64CB572E235F52A800D0F333 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				026FB19421A8F85900F0FF01 /* FavoriteFodcastCollectionviewCell.swift */,
+				026FB19221A8F4BC00F0FF01 /* FavoritesCollectionViewController.swift */,
+			);
+			name = Favorites;
+			sourceTree = "<group>";
+		};
+		64CB572F235F52B000D0F333 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				026D80AF219C4FC5005898D2 /* MainTabBarController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		64CB5730235F52B600D0F333 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
 				02CC26A9219E820E00ABC5EC /* String.swift */,
@@ -156,21 +204,14 @@
 			name = Utility;
 			sourceTree = "<group>";
 		};
-		06FF9FED8A94699AA44774E0 /* Frameworks */ = {
+		64CB5734235F53C100D0F333 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				75B5349093F781E5CDCF67EE /* Pods_FobCasts.framework */,
+				026D80A9219C4F56005898D2 /* Info.plist */,
+				026D80A4219C4F56005898D2 /* Assets.xcassets */,
+				026D80A6219C4F56005898D2 /* LaunchScreen.storyboard */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		64E59580231CC5E900B46E68 /* Favorites */ = {
-			isa = PBXGroup;
-			children = (
-				026FB19421A8F85900F0FF01 /* FavoriteFodcastCollectionviewCell.swift */,
-				026FB19221A8F4BC00F0FF01 /* FavoritesCollectionViewController.swift */,
-			);
-			name = Favorites;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		64E59581231CC65200B46E68 /* Search */ = {
@@ -181,42 +222,6 @@
 				026D80BB219D672C005898D2 /* FodcastCell.xib */,
 			);
 			name = Search;
-			sourceTree = "<group>";
-		};
-		64E59582231CC70D00B46E68 /* Systems */ = {
-			isa = PBXGroup;
-			children = (
-				026D809D219C4F53005898D2 /* AppDelegate.swift */,
-			);
-			name = Systems;
-			sourceTree = "<group>";
-		};
-		64E59583231CC74500B46E68 /* Episodes */ = {
-			isa = PBXGroup;
-			children = (
-				02CC26A5219E76EA00ABC5EC /* EpisodeTableViewCell.xib */,
-				02CC26A4219E76EA00ABC5EC /* EpisodeTableViewCell.swift */,
-				02CC26A0219D9C6D00ABC5EC /* EpisodeTableViewController.swift */,
-			);
-			name = Episodes;
-			sourceTree = "<group>";
-		};
-		64E59584231CC77C00B46E68 /* Player Details */ = {
-			isa = PBXGroup;
-			children = (
-				02CC26AD219EA6E700ABC5EC /* PlayerDetailsView.xib */,
-				02EC0D81219EDD9E002E632D /* PlayerDetailsView.swift */,
-				023EE4E221A4FDE400FDFC5E /* PlayerDetalsView+Gesture.swift */,
-			);
-			name = "Player Details";
-			sourceTree = "<group>";
-		};
-		64E59585231CC7AE00B46E68 /* Downloads */ = {
-			isa = PBXGroup;
-			children = (
-				02DF21AE21ABBFCE002763E0 /* DownloadsTableViewController.swift */,
-			);
-			name = Downloads;
 			sourceTree = "<group>";
 		};
 		66C201CA4BA3F52DCE499EA2 /* Pods */ = {
@@ -355,7 +360,6 @@
 				023EE4E521A510FC00FDFC5E /* UIApplication.swift in Sources */,
 				02CC26AC219E830500ABC5EC /* RSSFeed.swift in Sources */,
 				02EC0D82219EDD9E002E632D /* PlayerDetailsView.swift in Sources */,
-				026D80A0219C4F53005898D2 /* ViewController.swift in Sources */,
 				02CC26AA219E820E00ABC5EC /* String.swift in Sources */,
 				02EC0D8521A10946002E632D /* CMTime.swift in Sources */,
 				026D809E219C4F53005898D2 /* AppDelegate.swift in Sources */,
@@ -512,7 +516,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5SB3H4Y5NS;
-				INFOPLIST_FILE = FobCasts/Info.plist;
+				INFOPLIST_FILE = FobCasts/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -531,7 +535,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5SB3H4Y5NS;
-				INFOPLIST_FILE = FobCasts/Info.plist;
+				INFOPLIST_FILE = FobCasts/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
