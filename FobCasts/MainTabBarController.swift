@@ -16,7 +16,7 @@ class MainTabBarController: UITabBarController {
         UINavigationBar.appearance().prefersLargeTitles = true
         
         tabBar.tintColor = .purple 
-   
+        
         setupViewControllers()
         
         setupPlayerDetailsView()
@@ -27,10 +27,15 @@ class MainTabBarController: UITabBarController {
         bottomAnchorConstraint.constant = view.frame.height
         minimizedTopAnchorConstraint.isActive = true
         
-        
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
-            self.tabBar.transform = .identity
+            
+            if #available(iOS 13.0, *) {
+                self.tabBar.alpha = 1;
+            } else {
+                self.tabBar.transform = .identity
+            }
+            
             self.playerDetailsView.maximizedStackView.alpha = 0
             self.playerDetailsView.miniPlayerView.alpha = 1
         }, completion: nil)
@@ -43,14 +48,20 @@ class MainTabBarController: UITabBarController {
         maximizedTopAnchorConstraint.constant = 0
         bottomAnchorConstraint.constant = 0
         
+        
         if episode != nil {
             playerDetailsView.episode = episode
         }
         
         playerDetailsView.playlistEpisode = playlistEpisode
-
+        
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
+            if #available(iOS 13.0, *) {
+                self.tabBar.alpha = 0;
+            } else {
+                self.tabBar.transform = .identity
+            }
             self.tabBar.transform = CGAffineTransform(translationX: 0, y: 100)
             self.playerDetailsView.maximizedStackView.alpha = 1
             self.playerDetailsView.miniPlayerView.alpha = 0
@@ -66,22 +77,25 @@ class MainTabBarController: UITabBarController {
     var bottomAnchorConstraint: NSLayoutConstraint!
     
     fileprivate func setupPlayerDetailsView() {
-
+        
         playerDetailsView.translatesAutoresizingMaskIntoConstraints = false
         
         view.insertSubview(playerDetailsView, belowSubview: tabBar)
         
         maximizedTopAnchorConstraint = playerDetailsView.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height)
         maximizedTopAnchorConstraint.isActive = true
-
-        minimizedTopAnchorConstraint = playerDetailsView.topAnchor.constraint(equalTo: tabBar.topAnchor, constant: -64)
+        
+        if #available(iOS 13.0, *) {
+            minimizedTopAnchorConstraint = playerDetailsView.topAnchor.constraint(equalTo: tabBar.topAnchor, constant: 32)
+        } else {
+            minimizedTopAnchorConstraint = playerDetailsView.topAnchor.constraint(equalTo: tabBar.topAnchor, constant: -64)
+        }
         
         bottomAnchorConstraint = playerDetailsView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: view.frame.height)
         bottomAnchorConstraint.isActive = true
         
         playerDetailsView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         playerDetailsView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        
         
     }
     
@@ -101,15 +115,13 @@ class MainTabBarController: UITabBarController {
     fileprivate func generateNavigationController(with rootViewController: UIViewController, title: String, image: UIImage) -> UIViewController {
         
         let navController = UINavigationController(rootViewController: rootViewController)
-
+        
         navController.tabBarItem.title = title
         navController.tabBarItem.image = image
-    
-        rootViewController.navigationItem.title = title
         
+        rootViewController.navigationItem.title = title
         
         return navController
     }
-    
     
 }

@@ -23,6 +23,8 @@ class FodcastsSearchTableViewController: UITableViewController, UISearchBarDeleg
         
         setupSearchBar()
         setupTableView()
+        
+        searchBar(searchController.searchBar, textDidChange: "wearenetflix")
 
     }
     
